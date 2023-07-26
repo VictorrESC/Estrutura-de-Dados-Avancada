@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+
+<h1>1ª Questão</h1>
+
+<p>
+
+  <p> 
+    As árvores de Fibonacci são um exemplo de árvores AVL em que a altura máxima é limitada superiormente por \(log(n)\), onde n é o número de nós da árvore. Quando um nó é excluído dessas árvores, as operações de corte e fusão aumentam a altura da árvore em no máximo uma unidade por caminho da raiz a uma folha. Portanto, a exclusão de nós é eficiente em termos de complexidade, exigindo apenas \(O(log n)\) operações.
+  </p>
+
+  <p> 
+    Por exemplo, considere uma árvore AVL perfeitamente balanceada com altura 3. Se um nó com valor \(X\) for excluído dessa árvore e seu sucessor for escolhido para tomar seu lugar, o novo nó (com valor maior) seria adicionado à esquerda do pai do nó excluído. Embora a árvore ainda esteja perfeitamente balanceada, o pai do nó excluído agora está desbalanceado e precisa ser rotacionado para restaurar o balanceamento. No entanto, como a distância entre o pai do nó excluído e a raiz é \(log(n)\), que é \(X\) neste exemplo, apenas uma operação de rotação é necessária para restaurar o balanceamento. Portanto, a exclusão de nós nessas árvores AVL implica na realização de \(O(log n)\) operações de rotação para o balanceamento.
+  </p>
+</p>
+
+
+<h1>2ª Questão</h1>
+
+<h3>O algoritmo de remoção em árvore AVL consiste em buscar o nó que se deseja remover e, em seguida, remover o nó da árvore. </h3>
+
+<p> 
+  <p> Para excluir nós em Árvores AVL é necessário levar em consideração os seguintes casos: 
+  </p>
+  
+  <p>  
+    Se o nó encontrado for nulo, então a árvore é vazia ou a chave não existe na árvore. Não há o que remover neste caso.
+    <br> Caso contrário, uma vez encontrado o nó \(x\) com a chave desejada,
+    tratamos de removê-lo da árvore. Há somente dois casos a considerar:
+    <br>
+    <b>a)</b> No primeiro caso, se o nó não tiver filho direito, o seu filho esquerdo assume o seu lugar na árvore e os ancestrais de x devem ter suas alturas atualizadas e ser regulados, se necessário, por meio de rotação apropriada.
+    <br>
+    <br>
+
+    <!-- PRIMERA FT --> 
+
+   <br><b>b)</b> No segundo caso, se o nó tiver filho direito a chave do nó é trocada com a chave do seu sucessor e o sucessor é liberado. Todos os nós que estiverem no caminho do antigo pai do sucessor de x até a raiz da árvore devem ter suas alturas atualizadas e ser regulados, se necessário, por meio de rotação apropriada.
+    
+    <!-- SEGUNDA FT --> 
+  </p>
+  
+  <p>  
+    <b> ANÁLISE DO BALANCEAMENTO NA REMOÇÃO </b>
+
+    <p>
+      Os únicos nós que podem ter se tornado desbalanceados na remoção de um nó são os ancestrais do nó fisicamente removido. 
+    </p>
+
+    <p> 
+      <b>C(1).</b> No caso em que as alturas das subárvores do nó a ser removido são iguais, a remoção não afetará a altura e o balanceamento da árvore ou seja, nenhuma regulagem será necessária.
+    
+    <!-- TERCEIRA IMG ok -->
+    </p>  
+
+    <p> 
+      <b>C(2).</b> A remoção de um nó X da subárvore mais alta diminuirá a altura da árvore e pode levar a um desbalanceamento na árvore, dependendo da estrutura da árvore e da posição do nó X em relação aos seus ancestrais.
+    </p>
+
+    <b> 
+      Se a subárvore removida for a subárvore esquerda ou direita de p e a outra subárvore permanecer intacta, então a árvore ainda estará balanceada. <br>
+
+      <!-- quarta img ok -->
+    </b>  
+    <p>
+      <b>C(3).</b>  O caso de remoção da subárvore mais baixa de um nó p pode ser dividido em subcasos: <br>
+
+      <p> 
+
+        <p>
+          <b>C(3.a).</b> - O filho direito da árvore P tem balanço = 0, então faremos uma rotação a esquerda, fazendo que o P mantenha sua subárvore esquerda e herde a subárvore esquerda do seu filho direito, como sua subárvore direita e, por fim, fazemos que o filho direito de P seja agora o pai da mesma, mantendo assim o balanceamento da árvore. Dessa forma a altura da árvore não é alterada e nenhuma nova regulagem é necessária.
+        </p>
+
+        <p>
+          <b>C(3.b).</b> - Nesse caso o filho direito da árvore P tem balanço = +1. Fazemos o mesmo passo do caso anterior com rotação a esquerda, tomando cuidado agora, pois, algum ancestral pode ter se tornado desregulado, já que a altura diminuiu.
+        </p>
+
+        <p>
+          <b>C(3.c).</b> - Nesse último caso o filho direito da árvore p tem balanço -1. Faremos outro tipo de rotação, dessa vez sendo uma rotação esquerda dupla, que basicamente será uma rotação a direita das subárvores direita da árvore, depois uma rotação simples a esquerda em p. E novamente, algum ancestral pode ter se tornado desregulado, já que a altura diminuiu.
+        </p>
+    </p>
+
+  </p> 
+</p>
+
+</body>
+</html>

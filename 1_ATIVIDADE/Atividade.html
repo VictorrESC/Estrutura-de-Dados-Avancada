@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body>
+
+<h1>Questão 1. a)</h1>
+
+<p> Contraexemplo. Segundo a definição, a profundidade de um nó é o maior caminho desse nó da arvore até a raiz. Logo, se \(V\) é o pai de um nó \(W\), consequentemente o nó \(W\) estará um nível a mais do que o nó \(V\). Caso a fórmula seja aplicada, a discrepância entre a altura dos nós será maior ainda. Exemplo:
+  <center>
+  \(nivel(v) = nivel(w) + 1\)
+  <br>\(v =1, w =2\)
+  <br>\(1 = 2 + 1\)
+  <br> \(1 = 3\)
+  <br> Falso.
+</p>
+  </center>
+
+<h1>Questão 1. b)</h1>
+
+<p> Contraexemplo. Segundo a definição, a altura de um nó é o número de nós no maior caminho do nó até uma folha descendente. Em alguns casos, a fórmula é verdadeira, no entanto, suponha o seguinte cenário:
+<br/>
+  Há uma árvore de raiz \(T\) com profundidade e altura 5 e \(V\), o qual é o filho esquerdo de \(T\), no nível 2. Na esquerda de \(V\) existem vários caminhos e nós, já na direta existe apenas o nó \(W\), que é uma folha, no nível 3. \(V\) possui altura igual a 4, e \(W\) possui altura igual a 1. Se a fórmula for aplicada, teremos:
+  <center>
+  \(altura(v) = altura(w) + 1\)
+  <br>\(4 = 1 + 1\)
+  <br>\(4 = 2 \)
+  <br>Falso.
+  </center>
+</p>
+
+ <h1>Questão 1. c)</h1>
+<p>Por definição: 
+  <br> Profundidade ou Nível de um nó \(V\) é o número de arestas no maior caminho de \(V\) até a raiz.
+  <br> Altura de um nó \(V\) é o número de arestas no maior caminho de \(V\) até uma folha.
+  <br> Comparando as duas definições, é perceptível que são muito parecidas e que a afirmação do enunciado é verdadeira, visto que tanto a altura como a profundidade são proporcionais, pois, a medida em que aumentamos a altura da árvore, a altura dos nós também aumenta. Sendo assim, a altura máxima da árvore é igual ao nível máximo.
+</p>
+
+<h1>Questão 2.</h1>
+
+<p>
+  <h4>Provar: \((m - 1)n + 1\)</h4>
+  \(n\) = Número de nós na árvore, sendo \(n\) > 0.
+  <br> \(m\) = Número de filhos por nó, cujo \(m\) >= 2.
+
+  <h4> Caso Base: \(n = 1\)</h4>
+  <div>
+    <center>
+    \(1 = (m - 1)n + 1\)
+    <br>\(1 = (m - 1)1 + 1\)
+    <br>\(1 = m - 1 + 1\)
+    <br>\(1 = m\)
+  </center>
+  </div>
+
+  <h4>Hipótese de Indução:</h4>
+  Assumimos que vale para qualquer árvore com até \(n\)-1 nós, então:
+  <center>
+  <br>\((m-1)(n-1)+1\)
+  </center>
+
+  <h4>Passo Indutivo:</h4>
+  Suponha uma árvore \(T\) de n nós.
+  <br>Ao retirarmos qualquer folha \(V\) de \(T\), teremos a árvore \(T - V\), de \(n-1\) nós.
+  <br>\(T - V\) é idêntico a \(T\), com exceção de que uma subárvore de \(T - V\) foi substituida por um nó folha.
+  <br>Logo, \(T - V\) perdeu uma subárvore vazia, porém, ganhou \(m\).
+  <br> Com isso, fica claro que o número de subárvores vazias de \(T\) é:
+  <div>
+    <center>
+    <br>\((m-1) (n-1) + 1 - 1 + m\)
+    <br>\(mn - m - n + 1 + 1 - 1 + m\)
+    <br>\(mn - n + 1\)
+    <br>\((m-1)n+1\)
+  </center>
+  </div>
+</p>
+
+<h1>Questão 3.</h1>
+
+<p>
+  Contraexemplo. É verídico que uma árvore pode ser completa se ela possuir altura mínima para um dado número de nós, contudo, o contrário não se aplica. Ou seja, uma árvore com altura mínima não necessariamente é completa. Exemplo:
+  <br>
+</p>
+
+</body>
+</html>

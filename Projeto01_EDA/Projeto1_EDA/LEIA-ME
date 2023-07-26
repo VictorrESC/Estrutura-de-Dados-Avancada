@@ -1,0 +1,8 @@
+Para compilar o meu projeto, basta digitar esse comando no terminal:
+```
+g++ *.cpp -o  main
+```
+Para executar o meu projeto, basta digitar esse comando no terminal:
+```
+./main
+```
